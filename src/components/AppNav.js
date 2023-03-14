@@ -7,9 +7,9 @@ function AppNav() {
     return(
         <div className="AppNav">
             <AppRoutes />
-            <Link to='../views/Home'>Home </Link>
-            <Link to='../views/Login'>Login </Link>
-            <Link to='../views/Signup'>Signup</Link>
+            <Link to='home'>Home</Link>
+            <Link to='login'>Login</Link>
+            <Link to='signup'>Signup</Link>
             <p>Loggout</p>
         </div>
     )

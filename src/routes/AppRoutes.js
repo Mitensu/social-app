@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 
 import Home from "../views/Home";
 import Login from "../views/Login";
@@ -9,11 +9,13 @@ function AppRoutes() {
 
     return (
         <div className="AppRoutes">
+            
             <Routes>
-                <Route path="../views/Home" element={<Home/>} />
-                <Route path="../views/Login" element={<Login/>} />
+                <Route path="home" element={<Home />} />
+                <Route path="login" element={<Login />} />
                 <Route path="../views/Signup" element={<Signup/>} />
             </Routes>
+            
         </div>
     )
 }
