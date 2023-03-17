@@ -11,9 +11,10 @@ function AppRoutes() {
         <div className="AppRoutes">
             
             <Routes>
-                <Route path="home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="login" element={<Login />} />
-                <Route path="../views/Signup" element={<Signup/>} />
+                <Route path="signup" element={<Signup/>} />
+                123
             </Routes>
             
         </div>

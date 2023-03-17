@@ -5,12 +5,12 @@ import AppRoutes from "../routes/AppRoutes";
 function AppNav() {
 
     return(
-        <div className="AppNav">
-            <AppRoutes />
-            <Link to='home'>Home</Link>
+        <div className="AppNav"> 
+            <Link to='/'>Home</Link>
             <Link to='login'>Login</Link>
             <Link to='signup'>Signup</Link>
             <p>Loggout</p>
+            <AppRoutes />
         </div>
     )
 }
