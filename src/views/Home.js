@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import Post from "../components/Post";
+import "./Home.css";
 
 function Home(props) {
 
@@ -20,21 +22,17 @@ function Home(props) {
     }, []);
 
     return (
-        <div className="Home">
+        <div className="home">
             <h2>Home Page</h2>
-            <button onClick={getLatestPosts}>Try me!</button>
+            <div className="postList">
             {posts.map(post => {
                 return (
-
-                    <div className="post">
-                        <img src={post.user.avatar_url}></img>
-                        <p>{post.content}</p>
-                        <time>{post.created_at}</time>
-
-                    </div>
-
+                    <Post
+                        post={post}>
+                    </Post>
                 )
             })}
+            </div>
         </div>
     );
 };
