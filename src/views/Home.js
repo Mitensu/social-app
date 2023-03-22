@@ -3,7 +3,7 @@ import axios from 'axios';
 import Post from "../components/Post";
 import "./Home.css";
 
-function Home(props) {
+const Home = (props) => {
 
     const [posts, setPosts] = useState([]);
 
@@ -11,10 +11,31 @@ function Home(props) {
 
         axios.post('http://akademia108.pl/api/social-app/post/latest')
             .then(res => {
-                console.log(res);
                 setPosts(res.data)
 
             })
+    };
+
+    const getNextPosts = () => {
+
+        axios.post('https://akademia108.pl/api/social-app/post/older-then', {
+            date: posts[posts.length - 1].created_at
+        })
+        .then(res => {
+            setPosts(posts.concat(res.data))
+        })
+        .catch(error => {
+            if (error.response) {
+                console.error(error.response.data);
+                console.error(error.response.status);
+                console.error(error.response.headers);
+            } else if (error.request) {
+                console.error(error.request);
+            } else {
+                console.log('Error', error.message);
+            }
+        })
+
     }
 
     useEffect(() => {
@@ -27,11 +48,12 @@ function Home(props) {
             <div className="postList">
             {posts.map(post => {
                 return (
-                    <Post
+                    <Post key={post.id}
                         post={post}>
                     </Post>
                 )
             })}
+            <button onClick={getNextPosts}>Load more</button>
             </div>
         </div>
     );

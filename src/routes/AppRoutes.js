@@ -5,7 +5,7 @@ import Home from "../views/Home";
 import Login from "../views/Login";
 import Signup from "../views/Signup";
 
-function AppRoutes() {
+const AppRoutes = () => {
 
     return (
         <div className="AppRoutes">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Post(props) {
+const Post = (props) => {
 
     return (
         <div className="post">

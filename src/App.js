@@ -4,10 +4,11 @@ import './App.css';
 import AppNav from './components/AppNav';
 import AppRoutes from './routes/AppRoutes';
 
-function App() {
+const App = (props) => {
   return (
     <div className="App">
       <AppNav />
+      <AppRoutes />
     </div>
   );
 }
