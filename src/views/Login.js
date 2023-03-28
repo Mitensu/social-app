@@ -20,6 +20,11 @@ const Login = (props) => {
         axios.post('http://akademia108.pl/api/social-app/user/login', formData)
         .then(res => {
             console.log(res);
+            if (res.status === 200) {
+                localStorage.setItem("user", JSON.stringify(res.data))
+                setLoginMessage("Witaj " + res.data.username + "!")
+                props.setUser(localStorage.getItem("user"))
+            }
             // e.target.submit();
         })
         .catch(error => {
@@ -38,6 +43,7 @@ const Login = (props) => {
             <input name="password" type='password' onChange={handleInputChange}></input>
             <input type='submit' value='Login'></input>
             </form>
+            {loginMessage}
         </div>
     );
 }

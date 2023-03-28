@@ -17,7 +17,7 @@ const App = () => {
   return (
     <div className="App">
       <AppNav />
-      <AppRoutes user={user} />
+      <AppRoutes setUser={setUser} />
     </div>
   );
 }
