@@ -1,0 +1,44 @@
+.login input[type='text'], .login input[type='password'] {
+    font-size: 1em;
+    margin-bottom: 10px;
+    border: 2px transparent;
+    background-color: rgb(236, 236, 236);
+    padding: 30px 23px 15px;
+    width: 100%;
+    color: black;
+}
+.login .inputBox {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+}
+.login .inputBox span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: rgb(82, 82, 144);
+}
+.login .inputBox input:valid ~ span, .login .inputBox input:focus ~ span {
+    transform: translateX(-10px) translateY(-12px);
+    font-size: 0.65em;
+}
+.login input[type='submit'] {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 5px 35px;
+    font-weight: 600;
+    border: 0px solid black;
+    transition: all 0.3s;
+}
+.login input[type='submit']:hover {
+    background-color: black;
+}

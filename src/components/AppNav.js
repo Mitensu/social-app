@@ -1,15 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppRoutes from "../routes/AppRoutes";
+import './AppNav.css';
 
-const AppNav = () => {
+const AppNav = (props) => {
 
-    return(
-        <div className="AppNav"> 
+    return (
+        <div className="AppNav">
             <Link to='/'>Home</Link>
-            <Link to='login'>Login</Link>
-            <Link to='signup'>Signup</Link>
-            <Link to='/'>Loggout</Link>
+            {!props.user &&
+                <Link to='login'>Login</Link>
+            }
+            {!props.user &&
+                <Link to='signup'>Signup</Link>
+            }
+            <Link to='/' onClick={props.logout}>Logout</Link>
         </div>
     )
 }
