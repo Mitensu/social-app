@@ -41,3 +41,18 @@
     margin-bottom: 10px;
     padding: 10px 5px;
 }
+.home button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(29, 155, 240);
+    color: white;
+    margin: 10px 30px 10px 0;
+    border-radius: 30px;
+    padding: 5px 35px;
+    font-weight: 600;
+    border: 0px solid black;
+    transition: all 0.3s;
+}
+.home button:hover {
+    background-color: black;
+}

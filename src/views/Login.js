@@ -28,7 +28,7 @@ const Login = (props) => {
                 if (res.status === 200) {
                     localStorage.setItem("user", JSON.stringify(res.data));
                     setLoginMessage("Witaj " + res.data.username + "!");
-                    props.setUser(localStorage.getItem("user"))
+                    props.setUser(res.data)
                     navigate('/');
                 }
                 inputUsername.current.value = "";

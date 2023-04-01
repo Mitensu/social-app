@@ -8,18 +8,19 @@ import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
 
   axios.defaults.headers.common["Authorization"] = "Bearer " + (user ? user.jwt_token : "");
   axios.defaults.headers.post["Content-Type"] = "application/json"
 
   const handleLogout = () => {
+    if(user) {
     axios.post('https://akademia108.pl/api/social-app/user/logout')
       .then(() => {
         localStorage.clear();
         setUser(null);
       })
-  }
+  }};
 
   return (
     <div className="App">
