@@ -11,7 +11,7 @@ const AppRoutes = (props) => {
         <div className="AppRoutes">
             
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home user={props.user}/>} />
                 <Route path="login" element={<Login setUser={props.setUser}/>} />
                 <Route path="signup" element={<Signup/>} />
             </Routes>

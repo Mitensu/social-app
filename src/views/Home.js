@@ -42,11 +42,12 @@ const Home = (props) => {
     const getPrevPosts = () => {
 
         axios.post('https://akademia108.pl/api/social-app/post/newer-then', {
-            date: posts[0].created_at
+            date: posts[0].created_at,
         })
         .then(res => {
             setPosts(res.data.concat(posts))
         })
+        .catch(err => console.error(err))
     }
 
     useEffect(() => {
@@ -56,7 +57,7 @@ const Home = (props) => {
     return (
         <div className="home">
             <h2>Home Page</h2>
-            <AddPost />
+            {props.user && <AddPost getPrevPosts={getPrevPosts}/>}
             <div className="postList">
             {posts.map(post => {
                 return (

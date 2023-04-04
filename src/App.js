@@ -20,12 +20,17 @@ const App = () => {
         localStorage.clear();
         setUser(null);
       })
+      .catch(error => {
+        console.log(error)
+        localStorage.clear();
+        setUser(null);
+    });
   }};
 
   return (
     <div className="App">
       <AppNav user={user} logout={handleLogout} />
-      <AppRoutes setUser={setUser} />
+      <AppRoutes setUser={setUser} user={user}/>
     </div>
   );
 }

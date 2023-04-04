@@ -14,7 +14,9 @@ const AppNav = (props) => {
             {!props.user &&
                 <Link to='signup'>Signup</Link>
             }
-            <Link to='/' onClick={props.logout}>Logout</Link>
+            {props.user &&
+                <Link to='/' onClick={props.logout}>Logout</Link>
+            }
         </div>
     )
 }
