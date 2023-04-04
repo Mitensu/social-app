@@ -56,3 +56,28 @@
 .home button:hover {
     background-color: black;
 }
+.home .close {
+    text-decoration: none;
+    font-weight: 600;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.deleteConfirmation {
+    position: fixed;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+.deleteConfirmation .yes {
+    background-color: green;
+}
+.deleteConfirmation .no {
+    background-color: red;
+}
