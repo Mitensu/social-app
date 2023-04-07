@@ -13,7 +13,7 @@ const AppRoutes = (props) => {
             <Routes>
                 <Route path="/" element={<Home user={props.user}/>} />
                 <Route path="login" element={<Login setUser={props.setUser}/>} />
-                <Route path="signup" element={<Signup/>} />
+                <Route path="signup" element={<Signup user={props.user}/>} />
             </Routes>
             
         </div>

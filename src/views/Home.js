@@ -3,6 +3,7 @@ import axios from 'axios';
 import Post from "../components/Post";
 import "./Home.css";
 import AddPost from "../components/AddPost";
+import FollowRecommendations from "../components/FollowRecommendations";
 
 const Home = (props) => {
 
@@ -58,6 +59,7 @@ const Home = (props) => {
         <div className="home">
             <h2>Home Page</h2>
             {props.user && <AddPost getPrevPosts={getPrevPosts}/>}
+            {props.user && <FollowRecommendations />}
             <div className="postList">
             {posts.map(post => {
                 return (

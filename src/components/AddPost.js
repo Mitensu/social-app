@@ -34,7 +34,7 @@ const AddPost = (props) => {
 
     return (
         <form className="addPostForm">
-            <textarea ref={postText} placeholder="Napisz coś o sobie" onChange={() => {
+            <textarea ref={postText} placeholder="Napisz coś o sobie..." onChange={() => {
                 setPostContent({ content: postText.current.value });
                 adjustTextareaHeight();
             }}></textarea>

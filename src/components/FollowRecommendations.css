@@ -1,0 +1,23 @@
+.followRecommendations {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;    
+    justify-content: center;
+    background-color: rgb(36, 37, 38);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+.followRecommendations .followBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.followRecommendations .followBox img {
+    height: 120px;
+    border-radius: 120px;
+}
+.followRecommendations .followBox button {
+    margin: 0;
+}
